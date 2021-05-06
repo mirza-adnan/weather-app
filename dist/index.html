@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Weather App</h1>
+    <div class="search">
+      <input type="text" placeholder="Search a city or country" class="search-bar">
+      <button class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+  </header>
+  <main>
+    <div class="weather-left">
+      <div class="weather-left-wrapper">
+        <h3 class="location">Dhaka</h3>
+        <p class="condition">Clouds <i class="fas fa-cloud"></i></p>
+      </div>
+      <h2 class="temperature">27<sup>°C</sup></h2>
+    </div>
+    <div class="line"></div>
+    <div class="weather-right">
+      <p class="wind">Wind: <span>5 MPH</span></p>
+      <p class="feels-like">Feels like: <span>30<sup>°C</sup></span></p>
+      <p class="humidity">Humidity: <span>30%</span></p>
+      <p class="rain">Rain: <span>13%</span></p>
+    </div>
+
+  </main>
+</body>
+</html>
