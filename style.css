@@ -71,13 +71,6 @@ main {
   font-size: 4.2rem;
 }
 
-/*.weather-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}*/
-
 .temperature {
   color: var(--red);
   font-size: 200px;
@@ -89,6 +82,10 @@ main {
 .temperature sup {
   position: absolute;
   font-size: 50px;
+}
+
+.condition {
+  text-align: center;
 }
 
 .line {
