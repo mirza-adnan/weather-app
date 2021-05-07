@@ -30,10 +30,10 @@ function displayData (location) {
         region.textContent = data.name;
         condition.textContent = data.weather[0].main;
         temperature.textContent = String(Math.round(Number(data.main.temp)));
-        wind.textContent = `${data.wind.speed} km/h`;
+        wind.textContent = `${data.wind.speed} m/s`;
         feelsLike.textContent = data.main.feels_like;
         humidity.textContent = `${data.main.humidity}%`;
-        pressure.textContent = `${data.main.pressure}`;
+        pressure.textContent = `${data.main.pressure} hPa`;
         changeIcon(data.weather[0].main);
       } else {
         alert("Could not find the city you specified");
