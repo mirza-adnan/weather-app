@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("const url = \"https://api.openweathermap.org/data/2.5/weather?q=canada&appid=34fbec596ce6ee0a4ef569154cebd76e&units=metric\";\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("const url = \"https://api.openweathermap.org/data/2.5/weather?q=canada&appid=34fbec596ce6ee0a4ef569154cebd76e&units=metric\";\r\n\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
