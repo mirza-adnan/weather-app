@@ -23,10 +23,11 @@ function displayData (location) {
   const feelsLike = document.querySelector(".feels-like").querySelector(".fl-value"); 
   const humidity = document.querySelector(".humidity").querySelector("span"); 
   const pressure = document.querySelector(".pressure").querySelector("span");
- 
+
   getData(location)
     .then((data) => {
       if (data.cod === 200) {
+        reAnimate();
         region.textContent = data.name;
         condition.textContent = data.weather[0].main;
         temperature.textContent = String(Math.round(Number(data.main.temp)));
@@ -66,5 +67,39 @@ function changeIcon (data) {
   }
 }
 
-export {getSearch, displayData};
+function removeAnimation () {
+  const weatherLeft = document.querySelector(".weather-left");
+  const weatherRight = document.querySelector(".weather-right");
+  const line = document.querySelector(".line");
+
+  [weatherLeft, weatherRight].forEach(weather => {
+    weather.addEventListener("animationend", () => {
+      weather.classList.remove("fade");
+    });
+  });
+
+  line.addEventListener("animationend", () => {
+    line.classList.remove("elongate");
+  });
+}
+
+function reAnimate() {
+  document.querySelector(".weather-left").classList.add("fade");
+  document.querySelector(".weather-right").classList.add("fade");
+  document.querySelector(".line").classList.add("elongate");
+}
+
+function handleKeyboard () {
+  const searchBar = document.querySelector(".search-bar");
+  const searchButton = document.querySelector(".search-button");
+  window.addEventListener("keydown", (e) => {
+    if (document.activeElement === searchBar) {
+      if (e.key === "Enter" && searchBar.value) {
+        searchButton.click();
+      }
+    }
+  });
+}
+
+export {getSearch, displayData, handleKeyboard, removeAnimation};
 

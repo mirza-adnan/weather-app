@@ -54,6 +54,7 @@ header {
   color: var(--white);
   font-family: inherit;
   cursor: pointer;
+  outline: none;
 }
 
 main {
@@ -91,8 +92,8 @@ main {
 
 .line {
   width: 3px;
+  height: 300px;
   background-color: var(--red);
-  animation: elongate 1s ease-in-out forwards;
 }
 
 .weather-right {
@@ -107,7 +108,13 @@ main {
   color: var(--red);
 }
 
+.elongate {
+  height: 0px;
+  animation: elongate 1s ease-in-out forwards;
+}
+
 .fade {
+  opacity: 0;
   animation: fade 1s ease-in-out forwards;
 }
 
