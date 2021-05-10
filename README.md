@@ -7,6 +7,11 @@ Simple Weather App made using **HTML**, **CSS** and **JS**. The UI turned out su
 - Displays **Temperature**, **Wind Speed**, **Pressure** and **Humidity**.
 - Hoping to add a Fahrenheit converter in the future.  
 
+## Tools I used
+- Basic HTML, CSS, JS
+- Webpack
+- Open Weather Map API
+- Asyc/Await and Promises
 
 ## Things I learned:
 - Promises, Async/Await, Handling APIs
