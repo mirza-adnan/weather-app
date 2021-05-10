@@ -1,8 +1,9 @@
-import {getSearch, displayData, handleKeyboard, removeAnimation} from "./modules/display";
+import {search, displayData, handleKeyboard, removeAnimation} from "./modules/display";
 
+// function to initialise everything
 export default function init () {
   removeAnimation();
-  getSearch();
+  search();
   handleKeyboard();
   displayData("Dhaka");
 }

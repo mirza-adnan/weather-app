@@ -1,6 +1,7 @@
 import getData from "./data";
 
-function getSearch () {
+// add the search funtionality
+function search () {
   const searchBar = document.querySelector(".search-bar");
   const searchButton = document.querySelector(".search-button");
 
@@ -16,6 +17,7 @@ function getSearch () {
 }
 
 function displayData (location) {
+  // getting the dom elements
   const region = document.querySelector(".location");
   const condition = document.querySelector(".condition").querySelector("span");
   const temperature = document.querySelector(".temperature").querySelector("span");
@@ -24,10 +26,12 @@ function displayData (location) {
   const humidity = document.querySelector(".humidity").querySelector("span"); 
   const pressure = document.querySelector(".pressure").querySelector("span");
 
+  // receiving the weather data from api
   getData(location)
     .then((data) => {
       if (data.cod === 200) {
         reAnimate();
+        // updating all the info
         region.textContent = data.name;
         condition.textContent = data.weather[0].main;
         temperature.textContent = String(Math.round(Number(data.main.temp)));
@@ -43,6 +47,7 @@ function displayData (location) {
     });
 }
 
+// changes icon according to the weather
 function changeIcon (data) {
   const conditionIcon = document.querySelector(".condition").querySelector("i");
   switch (data) {
@@ -67,6 +72,7 @@ function changeIcon (data) {
   }
 }
 
+// removes css animation class so we can reanimate
 function removeAnimation () {
   const weatherLeft = document.querySelector(".weather-left");
   const weatherRight = document.querySelector(".weather-right");
@@ -83,6 +89,7 @@ function removeAnimation () {
   });
 }
 
+// makes the animation re-occur whenever a new location is searched
 function reAnimate() {
   document.querySelector(".weather-left").classList.add("fade");
   document.querySelector(".weather-right").classList.add("fade");
@@ -101,5 +108,5 @@ function handleKeyboard () {
   });
 }
 
-export {getSearch, displayData, handleKeyboard, removeAnimation};
+export {search, displayData, handleKeyboard, removeAnimation};
 
