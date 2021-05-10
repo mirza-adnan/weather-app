@@ -9,9 +9,10 @@ Simple Weather App made using **HTML**, **CSS** and **JS**. The UI turned out su
 
 ## Tools I used
 - Basic HTML, CSS, JS
-- Webpack
 - Open Weather Map API
 - Asyc/Await and Promises
+- Webpack
+- ESLint  
 
 ## Things I learned:
 - Promises, Async/Await, Handling APIs
