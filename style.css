@@ -77,23 +77,19 @@ main {
 
 .weather-left {
   font-size: 4.2rem;
+  text-align: center;
 }
 
 .temperature {
   color: var(--red);
   font-size: 200px;
   position: relative;
-  margin-right: 70px;
   text-align: center;
 }
 
 .temperature sup {
   position: absolute;
   font-size: 50px;
-}
-
-.condition {
-  text-align: center;
 }
 
 .line {
