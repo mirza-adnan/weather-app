@@ -29,21 +29,16 @@ function displayData (location) {
   // receiving the weather data from api
   getData(location)
     .then((data) => {
-      if (data.cod === 200) {
-        reAnimate();
-        // updating all the info
-        region.textContent = data.name;
-        condition.textContent = data.weather[0].main;
-        temperature.textContent = String(Math.round(Number(data.main.temp)));
-        wind.textContent = `${data.wind.speed} m/s`;
-        feelsLike.textContent = String(Math.round(Number(data.main.feels_like)));
-        humidity.textContent = `${data.main.humidity}%`;
-        pressure.textContent = `${data.main.pressure} hPa`;
-        changeIcon(data.weather[0].main);
-      } else {
-        alert("Could not find the city you specified");
-      }
-      
+      reAnimate();
+      // updating all the info
+      region.textContent = data.name;
+      condition.textContent = data.weather[0].main;
+      temperature.textContent = String(Math.round(Number(data.main.temp)));
+      wind.textContent = `${data.wind.speed} m/s`;
+      feelsLike.textContent = String(Math.round(Number(data.main.feels_like)));
+      humidity.textContent = `${data.main.humidity}%`;
+      pressure.textContent = `${data.main.pressure} hPa`;
+      changeIcon(data.weather[0].main);
     });
 }
 
