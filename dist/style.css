@@ -1,191 +1,191 @@
 :root {
-  --red: #E31C25;
-  --black: #1c1c1c;
-  --white: #edf5e1;
+	--red: #e31c25;
+	--black: #1c1c1c;
+	--white: #edf5e1;
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 html {
-  width: 100%;
+	width: 100%;
 }
 
 body {
-  min-height: 100vh;
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--black);
-  color: var(--red);
-  display: flex;
-  flex-direction: column;
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: var(--black);
+	color: var(--red);
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px 30px;
-  align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 20px 30px;
+	align-items: center;
 }
 
 header h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .search-bar {
-  padding: 0px 10px;
-  justify-self: center;
-  max-width: 400px;
-  min-width: 300px;
-  height: 40px;
-  border: 1px solid lightgray;
-  outline: none;
-  font-family: inherit;
-  font-weight: 500;
-  flex-grow: 1;
+	padding: 0px 10px;
+	justify-self: center;
+	max-width: 400px;
+	min-width: 300px;
+	height: 40px;
+	border: 1px solid lightgray;
+	outline: none;
+	font-family: inherit;
+	font-weight: 500;
+	flex-grow: 1;
 }
 
 .search {
-  display: flex;
+	display: flex;
 }
 
 .search-button {
-  width: 100px;
-  height: 40px;
-  border: none;
-  background-color: var(--red);
-  color: var(--white);
-  font-family: inherit;
-  cursor: pointer;
-  outline: none;
+	width: 100px;
+	height: 40px;
+	border: none;
+	background-color: var(--red);
+	color: var(--white);
+	font-family: inherit;
+	cursor: pointer;
+	outline: none;
 }
 
 main {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 50px 1fr;
-  grid-template-rows: 80%;
-  color: var(--white);
-  justify-items: center;
-  align-items: center;
-  padding: 20px;
+	flex-grow: 1;
+	display: grid;
+	grid-template-columns: 1fr 50px 1fr;
+	grid-template-rows: 80%;
+	color: var(--white);
+	justify-items: center;
+	align-items: center;
+	padding: 20px;
 }
 
 .weather-left {
-  font-size: 4.2rem;
-  text-align: center;
+	font-size: 4.2rem;
+	text-align: center;
 }
 
 .temperature {
-  color: var(--red);
-  font-size: 200px;
-  position: relative;
-  text-align: center;
+	color: var(--red);
+	font-size: 200px;
+	position: relative;
+	text-align: center;
 }
 
 .temperature sup {
-  position: absolute;
-  font-size: 50px;
+	position: absolute;
+	font-size: 50px;
 }
 
 .line {
-  width: 3px;
-  height: 300px;
-  background-color: var(--red);
+	width: 3px;
+	height: 300px;
+	background-color: var(--red);
 }
 
 .weather-right {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 .weather-right * {
-  margin: 10px 0px;
+	margin: 10px 0px;
 }
 
 .weather-right span {
-  color: var(--red);
+	color: var(--red);
 }
 
 .elongate {
-  height: 0px;
-  animation: elongate 1s ease-in-out forwards;
+	height: 0px;
+	animation: elongate 1s ease-in-out forwards;
 }
 
 .fade {
-  opacity: 0;
-  animation: fade 1s ease-in-out forwards;
+	opacity: 0;
+	animation: fade 1s ease-in-out forwards;
 }
 
 @keyframes elongate {
-  0% {
-    height: 0px;
-  }
+	0% {
+		height: 0px;
+	}
 
-  100% {
-    height: 300px;
-  }
+	100% {
+		height: 300px;
+	}
 }
 
 @keyframes fade {
-  0% {
-    opacity: 0;
-  }
+	0% {
+		opacity: 0;
+	}
 
-  100% {
-    opacity: 1;
-  }
+	100% {
+		opacity: 1;
+	}
 }
 
-@media screen and (max-width:1000px) {
-  header {
-    grid-template-columns: auto 1fr;
-    font-size: 0.8rem;
-  }
+@media screen and (max-width: 1000px) {
+	header {
+		grid-template-columns: auto 1fr;
+		font-size: 0.8rem;
+	}
 
-  .weather-left {
-    font-size: 3rem;
-  }
+	.weather-left {
+		font-size: 3rem;
+	}
 
-  .temperature {
-    font-size: 120px;
-  }
+	.temperature {
+		font-size: 120px;
+	}
 
-  .weather-right {
-    font-size: 1.5rem;
-  }
+	.weather-right {
+		font-size: 1.5rem;
+	}
 
-  .search {
-    justify-self: end;
-  }
+	.search {
+		justify-self: end;
+	}
 
-  .search-bar {
-    max-width: 350px;
-    min-width: 200px;
-  }
+	.search-bar {
+		max-width: 350px;
+		min-width: 200px;
+	}
 
-  .search-button {
-    width: 50px;
-  }
+	.search-button {
+		width: 50px;
+	}
 }
 
 @media screen and (max-width: 580px) {
-  .weather-left {
-    font-size: 2rem;
-  }
+	.weather-left {
+		font-size: 2rem;
+	}
 
-  .weather-right {
-    font-size: 1.3rem;
-  }
+	.weather-right {
+		font-size: 1.3rem;
+	}
 
-  header {
-    font-size: 0.6rem;
-  }
+	header {
+		font-size: 0.6rem;
+	}
 
-  .search-bar {
-    min-width: 150px;
-  }
+	.search-bar {
+		min-width: 150px;
+	}
 }
