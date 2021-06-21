@@ -30,26 +30,32 @@
 	}
 
 	// this function gets the weather data of the location of the user when the website first loads
-	function getInitialData() {
+	async function getInitialData() {
 		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition((position) => {
+			navigator.geolocation.getCurrentPosition(async (position) => {
 				const long = position.coords.longitude;
 				const lat = position.coords.latitude;
 				const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=34fbec596ce6ee0a4ef569154cebd76e&units=metric`;
-				getData(url);
+				const response = await fetch(url, { mode: 'cors' });
+				const data = await response.json();
+				displayData(data);
 			});
 		} else {
-			const url =
-				'https://api.openweathermap.org/data/2.5/weather?q=Dhaka&appid=34fbec596ce6ee0a4ef569154cebd76e&units=metric';
-			getData(url);
+			const data = await getData('Dhaka');
+			displayData(data);
 		}
 	}
 
-	async function getData(url) {
+	async function getData(location) {
 		try {
+			const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=34fbec596ce6ee0a4ef569154cebd76e&units=metric`;
 			const initialResponse = await fetch(url, { mode: 'cors' });
-			const response = await initialResponse.json();
-			displayData(response);
+			if (!initialResponse.ok) {
+				throw new Error('');
+			} else {
+				const response = await initialResponse.json();
+				return response;
+			}
 		} catch (error) {
 			alert('Cannot find location');
 		}
@@ -57,7 +63,6 @@
 
 	function displayData(data) {
 		reAnimate();
-		console.log('here');
 		region.textContent = data.name;
 		condition.textContent = data.weather[0].main;
 		temperature.textContent = String(Math.round(Number(data.main.temp)));
@@ -68,12 +73,12 @@
 		changeIcon(data.weather[0].main);
 	}
 
-	function handleSearch() {
+	async function handleSearch() {
 		if (searchBar.value) {
 			const location = searchBar.value;
-			const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=34fbec596ce6ee0a4ef569154cebd76e&units=metric`;
 			searchBar.value = '';
-			getData(url);
+			const data = await getData(location);
+			if (data) displayData(data);
 		}
 	}
 
