@@ -81,7 +81,7 @@ main {
 }
 
 .weather-left {
-	font-size: clamp(40px, 4vw, 200px);
+	font-size: clamp(36px, 4vw, 200px);
 	text-align: center;
 }
 
@@ -89,12 +89,13 @@ main {
 	color: var(--red);
 	font-size: clamp(70px, 9vw, 200px);
 	position: relative;
-	text-align: center;
+	margin-right: 5px;
 }
 
 .temperature sup {
 	position: absolute;
-	font-size: 50px;
+	font-size: clamp(12px, 2vw, 40px);
+	top: 10px;
 }
 
 .line {
@@ -104,7 +105,7 @@ main {
 }
 
 .weather-right {
-	font-size: clamp(20px, 2vw, 3rem);
+	font-size: clamp(16px, 2vw, 3rem);
 }
 
 .weather-right * {
@@ -193,4 +194,15 @@ main {
 	.search-bar {
 		min-width: 150px;
 	}
-}*/
+
+	main {
+		grid-template-rows: 1fr 50px 1fr;
+		grid-template-columns: 1fr;
+	}
+
+	.line {
+		height: 3px;
+		width: 300px;
+	}
+}
+*/
