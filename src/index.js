@@ -16,7 +16,6 @@
 	const weatherLeft = document.querySelector('.weather-left');
 	const weatherRight = document.querySelector('.weather-right');
 	const line = document.querySelector('.line');
-	const container = document.querySelector('.container');
 
 	init();
 
@@ -57,6 +56,7 @@
 				return response;
 			}
 		} catch (error) {
+			console.clear();
 			alert('Cannot find location');
 		}
 	}
