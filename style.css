@@ -81,7 +81,7 @@ main {
 }
 
 .weather-left {
-	font-size: clamp(36px, 4vw, 200px);
+	font-size: clamp(30px, 4vw, 200px);
 	text-align: center;
 }
 
